@@ -2,16 +2,78 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>闭包 closure</title>
+	<title>Document</title>
 	<style type="text/css">
-		div{
-			width: 100px;
+		h1{
+			color: #ddd;
+			text-align: center;
+		}
+		#box{
+			width: 500px;
+			padding:20px 0;
+			background-color: black;
+			/*box-shadow: 2px 5px 0 white;*/
+		}
+		#box > div{
+			display: flex;
+			text-align: center;
+			justify-content:space-around;
+		}
+		#box span{
+			display: inline-block;
+			flex-basis:20%;
+			color: white;
+		}
+		#lastTime span{
 			height: 100px;
-			background-color: pink;
+			background-color: white;
+			color: #333;
+			font-size: 48px;
+			line-height: 100px;
 		}
 	</style>
 </head>
 <body>
-	<div></div>
+	<div id="box">
+		<h1>毕业倒计时</h1>
+		<div id="lastTime">
+			<span id="day"></span>
+			<span id="hour"></span>
+			<span id="min"></span>
+			<span id="sec"></span>
+		</div>
+		<div>
+			<span>天</span>
+			<span>时</span>
+			<span>分</span>
+			<span>秒</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var endTime=new Date(2017,05,01,18,00,00,000);//这种格式的 月份是从0开始，05表示6月份
+		function changTwo(x){//当数字小于10时以0开头的函数
+			if(parseInt(x)<10){
+				x="0"+parseInt(x);
+			}
+			else{
+				x=parseInt(x);
+			}
+			return x;
+		}	
+		function clock(){
+			var nowTime=new Date();
+			var timeValue=endTime.getTime()-nowTime.getTime();
+			var days=(timeValue/(1000*60*60*24));
+			var hours=(days-parseInt(days))*24;
+			var mins=(hours-parseInt(hours))*60;
+			var secs=(mins-parseInt(mins))*60
+			day.innerText=changTwo(days);
+			hour.innerText=changTwo(hours);
+			min.innerText=changTwo(mins);
+			sec.innerText=changTwo(secs);
+		}
+		clock();
+		setInterval(clock,500);
+	</script>
 </body>
 </html>
