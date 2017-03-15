@@ -3,57 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>闭包 closure</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
 </head>
 <body>
-	<script type="text/javascript">
-		function outer() {
-			var str = "hello";
-			function inner() {
-				console.log(str);
-			}
-		}
-
-		// 自增的一个计数器
-		// var start = 0;
-		// function counter() {
-		// 	start++;
-		// 	return start;
-		// }
-		// 
-		
-		// (function() {
-		// 	var start = 0;
-		// 	function counter() {
-		// 		start++;
-		// 		return start;
-		// 	}
-		// }())
-		
-		function fn() {
-			var start = 0;
-			function counter() {
-				start++;
-				return start;
-			}
-			return counter;
-		}
-		var c = fn(); // counter
-		// c();
-		// c();
-		// c();
-		// c();
-	function makeAdder(x) {
-	  return function(y) {
-	  	x++;
-	    return x + y;
-	  };
-	}
-
-	var add5 = makeAdder(5);
-	var add10 = makeAdder(10);
-
-	console.log(add5(2));  // 7
-	console.log(add10(2)); // 12
-	</script>
+	<div></div>
 </body>
 </html>
