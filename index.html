@@ -1,81 +1,250 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>sina微博</title>
 	<style type="text/css">
-		h1{
-			color: #ddd;
-			text-align: center;
+		*{
+			margin:0;
+			padding: 0;
+			font-family: "Microsoft Yahei";
+			color:#333;
 		}
-		#box{
-			width: 500px;
-			padding:20px 0;
-			background-color: black;
-			margin:0 auto;
-			/*box-shadow: 2px 5px 0 white;*/
+		body {
+			background-color: #3383aa;
 		}
-		#box > div{
-			display: flex;
-			text-align: center;
-			justify-content:space-around;
+		ul,ol {
+			list-style: none;
 		}
-		#box span{
-			display: inline-block;
-			flex-basis:20%;
-			color: white;
+		#container {
+			width:600px;
+			margin:20px auto;
+			border-radius: 4px;
+			padding:20px 40px 10px; 
+			background-color: #fff;
 		}
-		#lastTime span{
+		textarea {
+			resize: none;
+			width:580px;
 			height: 100px;
-			background-color: white;
-			color: #333;
-			font-size: 48px;
-			line-height: 100px;
+			padding:8px;
+			font-size: 16px;
+			-webkik-appearance:none;
+			outline: none;
+			box-shadow:inset 0 0 5px 0 #ccc;
+		}
+		textarea:focus {
+			border:1px solid #f7671d;
+			box-shadow: none;
+		}
+		.user-bar {
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
+		.user-bar span,.user-bar input {
+			vertical-align: middle;
+		}
+		.user-bar input {
+			-webkik-appearance:none;
+			outline: none;
+			border:1px solid #999;
+			font-size: 14px;
+			box-shadow:inset 0 0 3px 0 #ccc;
+			padding: 4px 8px;
+		}
+		.user-bar input:focus {
+			box-shadow: none;
+			border:1px solid #f7671d;
+		}
+		.word-tips {
+			/*text-align: right;*/
+			margin-top: 12px;
+			overflow: hidden;
+			font-size: 14px;
+			line-height: 28px;
+		}
+		.left-tips {
+			float: left;
+			line-height: 30px;
+		}
+
+		.submit-button {
+			float: right;
+			margin-right: 4px;
+			width:82px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			background-color: #ff8140;
+			border-radius: 2px;
+			color:#fff;
+			transition:background 1s;
+		}
+		.submit-button:hover {
+			background-color: #f7671d;
+		}
+		.left-tips span {
+			font-family: Constantia, Georgia;
+			font-weight: bold;
+			font-size: 18px;
+
+		}
+		#msgList {
+			margin-top: 20px;
+			padding-bottom: 8px;
+		}
+		#msgList li {
+			overflow: hidden;
+			padding-bottom: 1px;
+		}
+		#msgList li div{
+			display: inline-block;
+			vertical-align: top;
+			*display: inline;
+			*zoom:1;
+		}
+		.logo {
+			margin-right: 18px;
+		}
+		.user-info {
+			width:520px;
+			margin-bottom: 20px;
+			font-size: 16px;
+		}
+		.user-info .txt {
+			line-height: 1.5;
+			color:#666;
+		}
+		a {
+			text-decoration: none;
+		}
+		.user-name {
+			overflow: hidden;
+		}
+		.del-btn
+		{
+			font-size: 14px;
+			color:#666;
+		}
+		.user-name span {
+			float: left;
+		}
+		.user-info span {
+			font-weight: bold;
+			color:#333;
+		}
+		.user-info a {
+			float: right;
+		}
+		.user-info a:hover{
+			color:#eb7350;
+		}
+		.logo img
+		{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+		}
+		*::selection {
+			background-color:#ff8140;
+			color:#fff;
 		}
 	</style>
 </head>
 <body>
-	<div id="box">
-		<h1>毕业倒计时</h1>
-		<div id="lastTime">
-			<span id="day"></span>
-			<span id="hour"></span>
-			<span id="min"></span>
-			<span id="sec"></span>
-		</div>
-		<div>
-			<span>天</span>
-			<span>时</span>
-			<span>分</span>
-			<span>秒</span>
-		</div>
-		<a href="./test.html">test</a>
+	<div id="container">
+		<form>
+			<p class="user-bar">
+				<label>用户：<input type="text" id="userName"></label>
+			</p>
+			<textarea id="msg"></textarea>
+			<p class="word-tips">
+				<span class="left-tips">还可以输入<span id="wordNumber">140</span>个字</span>
+				<a href="javascript:void(0);" class="submit-button" id="submitBtn">发布</a>
+			</p>
+		</form>
+		<ul id="msgList">
+			<!-- <li>
+				<div class="logo">
+					<img src="">
+				</div>
+				<div class="user-info">
+					<p class="user-name"><span>我叫小明</span><a href="javascript:void(0);" class="del-btn">删除</a></p>
+					<p class="txt">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur adipisicing eli</p>
+				</div>
+			</li>
+			<li>
+				<div class="logo">
+					<img src="">
+				</div>
+				<div class="user-info">
+					<p class="user-name"><span>我叫小明</span><a href="javascript:void(0);" class="del-btn">删除</a></p>
+					<p class="txt">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur adipisicing eli</p>
+				</div>
+			</li> -->
+		</ul>
 	</div>
 	<script type="text/javascript">
-		var endTime=new Date(2017,05,01,18,00,00,000);//这种格式的 月份是从0开始，05表示6月份
-		function changTwo(x){//当数字小于10时以0开头的函数
-			if(parseInt(x)<10){
-				x="0"+parseInt(x);
+		//1.获取元素 按部就班
+		var submitBtn=document.getElementById("submitBtn");
+		var msgList=document.getElementById("msgList");
+		var userName=document.getElementById("userName");
+		var commentMsg=document.getElementById("msg");
+		//2.插入评论
+		submitBtn.onclick=function(){
+			var userVal=userName.value;//获取到的是字符串
+			var commentVal=commentMsg.value;
+			if(!userVal){
+				//判断用户名是否为空,则获取焦点
+				userName.focus();
+				alert("空的就想发布？？不存在的")
+				return;
 			}
-			else{
-				x=parseInt(x);
+			if(!commentVal){
+				commentMsg.focus();
+				alert("空的就想发布？？不存在的")
+				return;
 			}
-			return x;
-		}	
-		function clock(){
-			var nowTime=new Date();
-			var timeValue=endTime.getTime()-nowTime.getTime();
-			var days=(timeValue/(1000*60*60*24));
-			var hours=(days-parseInt(days))*24;
-			var mins=(hours-parseInt(hours))*60;
-			var secs=(mins-parseInt(mins))*60
-			day.innerText=changTwo(days);
-			hour.innerText=changTwo(hours);
-			min.innerText=changTwo(mins);
-			sec.innerText=changTwo(secs);
+			// if(userName.value.trim()&&commentMsg.value.trim()){//当评论内容和用户名都不为空的时候再生成列表
+				var li=document.createElement("li");
+				li.innerHTML=
+					'<div class="logo">'+
+						'<img src="">'+
+					'</div>'+
+					'<div class="user-info">'+
+						'<p class="user-name"><span>'+userName.value+'</span><a href="javascript:void(0);" class="del-btn">删除</a></p>'+
+						'<p class="txt">'+commentMsg.value+'</p>'+
+					'</div>';//innerHTML不能有换行，所以要用字符串的拼接
+				msgList.insertBefore(li,msgList.children[0]);
+			// }
+			// else{
+			// 	alert("评论内容和用户名都不能为空啊！兄弟！！");
+			// }
+			userName.value="";
+			commentMsg.value="";
+			var delBtn=li.getElementsByTagName('a')[0];//从新创建li里面查找a
+			delBtn.onclick=function(){
+				msgList.removeChild(li);
+			}
 		}
-		clock();
-		setInterval(clock,500);
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
