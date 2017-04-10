@@ -8,7 +8,7 @@ $(function(){
 	}
 	function post(){
 		$.ajax({//发送请求
-			url:"https://www.tuling123.com/openapi/api",
+			url:"http://www.tuling123.com/openapi/api",
 			type:"POST",
 			dataType:"json",
 			data:{//要发送过去的参数
