@@ -2,43 +2,105 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<title>图灵机器人初级测试版</title>
-	<link rel="stylesheet" type="text/css" href="tulingRobots.css">
+	<title>儿童心理健康科普测试网</title>
+	<meta name="keywords" content="儿童健康,儿童心理,心理测试">
+	<meta name="description" content="儿童常见的心理异常知识科普以及提供生动的心理题目测试">
+	<meta name="author" content="bearLin">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<style type="text/css">
+		.box_icon{
+			display: block;
+			text-align: center;
+			margin: 80px;
+			text-decoration: none;
+		}
+		.box_icon i{
+			font-size: 150px;
+			color: #fff;
+		}
+		#moon{
+			position: absolute;
+			top: 2%;
+			left: 50%;
+			width: 300px;
+			height: 300px;
+		}
+		
+		.rocommend li{
+			display: inline-block;
+			margin: 0 5px;
+		}
+		.rocommend li a{
+			text-decoration: none;
+			color: #ddd;
+		}
+	</style>
 </head>
 <body>
-	<div id="box">
-		<ul id="talkBar">
-			<li style="text-align: center;margin:0">
-				查天气 看笑话 成语接龙 脑筋急转弯 查新闻 查菜谱 查链接
+	<header>
+		<h1>Psychological Testing</h1>
+	</header>
+	<section class="wrap">
+		<article class="box">
+			<a href="./tuling.html" class="box_title">
+				聊天机器人
+			</a>
+			<!-- <a href="" class="box_img">
+			
+				<img src="img/huluwa.jpg">
+			</a> -->
+			<a class="box_icon" href="./tuling.html">
+				<i class="icon iconfont icon-liaotian"></i>
+			</a>
+		</article>
+		<article class="box">
+			<a href="article.html" class="box_title">
+				科普文章
+			</a>
+			<!-- <a href="" class="box_img">
+				<img src="img/huluwa.jpg">
+			</a> -->
+			<a class="box_icon" href="article.html">
+				<i class="icon iconfont icon-xinlikepu"></i>
+			</a>
+		</article>
+		<article class="box">
+			<a href="" class="box_title">
+				心理测试
+			</a>
+			<!-- <a href="" class="box_img">
+				<img src="img/huluwa.jpg">
+			</a> -->
+			<a class="box_icon" href="">
+				<i class="icon iconfont icon-xinliceshi"></i>
+			</a>
+		</article>
+	</section> 
+	<!-- <div id="moon">	
+		<img src="img/moon.png">
+	</div> -->
+	<footer>
+		<div style="font-size: 20px">外站推荐</div>
+		<ul class="rocommend">
+			<li>
+				<a href="http://www.nlp.cn/" target="_blank">心理学第一门户网站</a>
 			</li>
-			<!-- <li style="text-align: right;">
-			<span id="user" style="text-align: right;">你</span id="user">
-			<span class="usertalk">你好</span>
-			<span class="rightarrow"></span>
+			<li>
+				<a href="http://www.psychspace.com/" target="_blank">心理学空间</a>
 			</li>
-			<li style="text-align: left;"><p style="text-align: left;">秃秃</p><span class="left"></span><span class="robotstalk">咦，怎么又是这句话呀</span></li> -->
+			<li>
+				<a href="http://www.xinli001.com/" target="_blank">壹心理</a>
+			</li>
+			<li>
+				<a href="http://www.xlzx.com/test/" target="_blank">中国心理咨询网</a>
+			</li>
 		</ul>
-		<div id="inputBar">
-			<input type="text">
-			<button>发送</button>
+		<div style="text-align: left">
+			@惠州学院毕业设计
 		</div>
-		<div id="popBox">
-			<ul>
-			</ul>
-			<a href="javascript:void(0)" class="gotop">返回顶部</a>
-		</div>
-	</div>
-	<!-- <button id="btn">test</button> -->
-	<script type="text/javascript" src="jquery.min.js"></script>
-	<script type="text/javascript" src='tulingRobots.js'></script>
-	<script type="text/javascript">
-		var num=20;
-		function fn(){
-			alert(num);
-			var num=10;//变量提升 var num已经上去了，但是赋值并没有上去
-		}
-
-	</script>
+	</footer>
 </body>
 </html>

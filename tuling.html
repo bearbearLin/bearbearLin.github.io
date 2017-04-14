@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图灵机器人初级测试版</title>
+	<link rel="stylesheet" type="text/css" href="css/tulingRobots.css">
+	<style type="text/css">
+		.searchBtn{
+			position: absolute;
+			/*top: 32px;*/
+			right:-64px;
+			text-align: center;
+			top: 35%;
+			/*width: 100%;*/
+			transform-style:preserve-3d;
+		}
+		.tips{
+			display: block;
+			/*width: 80px;*/
+			/*height: 15px;*/
+			background-color: #014fa1;
+			color: #ddd;
+			padding: 5px;
+			border-radius: 4px;
+			/*background-color: #014fa1;*/
+			background-color:rgba(0,0,0,0.3);
+			border: 1px solid #012a3c;
+			cursor: pointer;
+			margin: 10px 0;
+			color:#fff;
+			transition: all 1s;
+		}
+		.tips:hover{
+			color: #012a3c;
+			background-color: #ddd;
+			transform:rotate3d(0,0,1,-10deg);
+		}
+		#nav{
+			position: absolute;
+			left: -13%;
+			top:10%;
+			/*margin-top: -45px;*/
+		}
+		#nav a{
+			text-align: center;
+			display: block;
+			font-size: 20px;
+			height: 30px;
+			width: 100px;
+			color:#ddd;
+			text-decoration: none;
+			margin: 20px 0;
+			background-color:rgba(0,0,0,0.3);
+			border: 1px solid #012a3c;
+			border-radius: 6px;
+			padding: 4px;
+		}
+		#nav a:hover{
+			color: #012a3c;
+			background-color: #ddd;
+			transition: all 1s;
+			transform:rotate(10deg);
+		}
+		.rocommend li{
+			display: inline-block;
+			margin: 0 5px;
+		}
+		.rocommend li a{
+			text-decoration: none;
+			color: #ddd;
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="box">
+		<div id="nav">
+			<a href="index.html">首页</a>
+			<a href="article.html">科普文章</a>
+			<a href="test.html">心理测试</a>
+		</div>
+		<div class="searchBtn">
+			<span class="tips 1">查天气</span>
+			<span class="tips 2">查笑话</span>
+			<span class="tips 3">查菜谱</span>
+			<span class="tips 4">查新闻</span>
+			<span class="tips 5">故事</span>
+			<span class="tips 6">成语接龙</span>
+			<span class="tips 7">脑经急转弯</span>
+		</div>
+		<ul id="talkBar">
+		</ul>
+		<div id="inputBar">
+			<input type="text">
+			<button>发送</button>
+		</div>
+		<div id="popBox">
+			<ul>
+			</ul>
+			<a href="javascript:void(0)" class="gotop">返回顶部</a>
+		</div>
+	</div>
+	<footer>
+		<div style="font-size: 20px">外站推荐</div>
+		<ul class="rocommend">
+			<li>
+				<a href="http://www.nlp.cn/" target="_blank">心理学第一门户网站</a>
+			</li>
+			<li>
+				<a href="http://www.psychspace.com/" target="_blank">心理学空间</a>
+			</li>
+			<li>
+				<a href="http://www.xinli001.com/" target="_blank">壹心理</a>
+			</li>
+			<li>
+				<a href="http://www.xlzx.com/test/" target="_blank">中国心理咨询网</a>
+			</li>
+		</ul>
+		<div style="text-align: left">
+			@惠州学院毕业设计
+		</div>
+	</footer>
+	<!-- <button id="btn">test</button> -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src='js/tulingRobots.js'></script>
+	<script type="text/javascript">
+		function clickEvent(str){
+			$("#inputBar input").val(str);
+			$("#inputBar button").trigger("click");
+		}
+		$(".tips.1").on("click",function(){
+			clickEvent("天气");
+		})
+		$(".tips.2").on("click",function(){
+			clickEvent("笑话");
+		})
+		$(".tips.3").on("click",function(){
+			clickEvent("菜谱");
+		})
+		$(".tips.4").on("click",function(){
+			clickEvent("新闻");
+		})
+		$(".tips.5").on("click",function(){
+			clickEvent("故事");
+		})
+		$(".tips.6").on("click",function(){
+			clickEvent("成语接龙");
+		})
+		$(".tips.7").on("click",function(){
+			clickEvent("脑经急转弯");
+		})
+	</script>
+</body>
+</html>
